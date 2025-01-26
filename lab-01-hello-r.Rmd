@@ -323,7 +323,7 @@ Facet by the dataset variable, placing the plots in a 3 column grid, and don't a
 
 5.  Finally, let's plot all datasets at once. In order to do this we will make use of faceting.
 
-```{r all-viz, eval=FALSE, fig.fullwidth=TRUE}
+```{r all-viz, echo=FALSE, fig.fullwidth=TRUE}
 ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
   geom_point()+
   facet_wrap(~ dataset, ncol = 3) +
@@ -332,7 +332,7 @@ ggplot(datasaurus_dozen, aes(x = x, y = y, color = dataset))+
 
 And we can use the `group_by` function to generate all the summary correlation coefficients.
 
-```{r all-r, eval=FALSE}
+```{r all-r, echo=FALSE}
 datasaurus_dozen %>%
   group_by(dataset) %>%
   summarize(r = cor(x, y)) %>%
@@ -341,7 +341,7 @@ datasaurus_dozen %>%
 
 You're done with the data analysis exercises, but we'd like you to do two more things:
 
-```{r fig-resize-global, fig.margin = TRUE, echo = FALSE, fig.width=3}
+```{r fig-resize-global, echo=FALSE, fig.margin=TRUE, fig.width=3}
 knitr::include_graphics("img/fig-resize-global.png")
 ```
 
@@ -353,7 +353,7 @@ Then, knit your document and see how you like the new sizes.
 Change and knit again and again until you're happy with the figure sizes.
 Note that these values get saved in the YAML.
 
-```{r fig-resize-local, fig.margin = TRUE, echo = FALSE, fig.width=3}
+```{r fig-resize-local, echo=FALSE, fig.height=4, fig.margin=TRUE, fig.width=6}
 knitr::include_graphics("img/fig-resize-local.png")
 ```
 
@@ -362,7 +362,7 @@ To do so click on the gear icon within the chunk where you want to make a change
 Changing the figure sizes added new options to these chunks: `fig.width` and `fig.height`.
 You can change them by defining different values directly in your R Markdown document as well.
 
-```{r theme-highlight, fig.margin = TRUE, echo = FALSE, fig.width=3}
+```{r theme-highlight, echo=FALSE, fig.height=5, fig.margin=TRUE, fig.width=7}
 knitr::include_graphics("img/theme-highlight.png")
 ```
 
